@@ -44,3 +44,27 @@ int main() {
 	printf("r1 = %f\n", r1);
 	printf("r2 = %f\n", r2);
 }
+
+//문자열 받기
+
+int main() {
+	int n1;
+	int n2;
+	int n3;
+
+	printf("국어, 영어, 수학 점수를 적어주세요 : ");
+	scanf_s("%d%d%d", &n1, &n2, &n3);
+	printf("총점 : %d\n", n1 + n2 + n3);
+	printf("평균 : %d\n", n1 + n2 + n3) / 3);
+}
+
+int main() {
+	char name[20];
+	int n1;
+
+	printf("당신의 이름은 무엇입니까? : ");
+	scanf_s("%s", name, sizeof(name));
+	printf("%s 님의 나이는 몇살입니까?", name);
+	scanf_s("%d", &n1, sizeof(n1));
+	printf("%s 님의 나이는 %d 입니다.", name, n1);
+}
