@@ -1,0 +1,78 @@
+01 산술 연산자
+
+#include <stdio.h>
+int main() {
+int a = 10, b = 20, c = 0;
+printf("a, b, c = %d %d %d\n", a, b, c);
+printf("a + b = %d\n", a + b);
+printf("a - b = %d\n", a - b);
+printf("a * b = %d\n", a * b);// 곱하기
+printf("a / b = %d\n", a / b);// 나눈 후의 몫 구하기
+printf("a % b = %d\n", a % b);// 나눈후의 나머지를 구하기
+}
+
+02 복합 대입 연산
+
+int main() {
+int a = 10, b = 20, c = 0;
+a += b; // a = a + b
+printf("a = %d\n", a);
+a -= b; // a = a - b
+printf("a = %d\n", a);
+a *= b; // a = a * b
+printf("a = %d\n", a);
+a /= b; // a = a / b
+printf("a = %d\n", a);
+}
+
+03 비교연산자
+  
+참 : 0이 아닌 모든 값
+거짓 : 0
+  
+int main() {
+int a = 10, b = 20, c = 0;
+printf("a == b ? %d\n", a == b); // == : 같은가?
+printf("a > b ? %d\n", a > b);
+printf("a >= b ? %d\n", a >= b); // 크거나 같은가?
+printf("a < b ? %d\n", a < b);
+printf("a <= b ? %d\n", a <= b);
+printf("a != b ? %d\n", a != b); // != : 다른가? (not 연산자)
+}
+
+04 논리연산자
+  1. AND 연산자(&&)
+    1. 왼쪽의 조건식이 거짓이면 오른쪽 조건식을 평가하지 않음.
+    2. "&&" 연산자는 일반적으로 "||" 연산자보다 우선순위가 높다.
+    3. "&&" 연산자의 결과는 논리값(참 또는 거짓)이다.
+  
+  int main() {
+
+  int a = 10, b = 20;
+  printf("a > 10 && a > 20 ? %d\n", a > 10 && a > 20);
+  printf("a < 11 && a < 20 ? %d\n", a < 11 && a < 20);
+
+  2. OR 연산자(||)
+    앞, 뒤의 조건 하나만 맞으면 참
+      int a = 5, b = 9, c = 0;
+      printf("a == b || a < b ? %d\n", a == b || a < b);
+      printf("a > 5 || b > 10 ? %d\n ", a > 5 || b > 10);
+
+  3. NOT 연산자(!)
+    printf("!참 ? %d\n", !10); // 참이라면 거짓이 뜬다.
+    printf("!거짓 ? %d\n", !0); // 거짓이면 참이 뜬다.
+
+ 
+#include <stdio.h>	
+
+int main() {
+	int a = 0, b = 0, c = 0;
+
+	printf("a, b, c	정수 값을 입력해주세요 : ");
+	scanf_s("%d%d%d", &a, &b, &c);
+	printf("a = %d, b = %d, c = %d\n", a, b, c);
+	printf("a == b && a > 10 && b > 10 ? %d\n", a == b && a > 10 && b > 10);
+	printf("a > b && a == 0 ? %d\n", a > b && a == 0);
+	printf("a > 5 || b < 10 ? %d\n", a > 5 || b < 10);
+	printf("a > b && a > c || a != 0 ? %d\n", a > b && a > c || a != 0);
+}
