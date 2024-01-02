@@ -1,0 +1,57 @@
+Switch문은 조건문 중 하나다. 
+조건에 따라 다른 코드를 실행할 때 사용.
+하나의 변수에 대해 여러가지 조건을 나열하여 각 조건 마다 실행할 코드를 지정
+
+case : if문이자 else if 문이다. 
+braek : 해당 코드를 실행하고 작동을 멈춤.
+default : else 문이다.(case에 해당하는 조건이 없을 때 작동)
+
+예시) switch 문으로 1~12월 마지막 날짜를 나오게 만들기
+int main() {
+	int month = 0;
+	printf("1~12월 중 하나를 치십시오 >>> ");
+	scanf_s("%d", &month);
+
+	switch (month)
+	{
+	case 1 :
+		printf("1월의 마지막 날은 31일입니다.");
+		break;
+	case 2:
+		printf("2월의 마지막 날은 29일입니다.");
+		break;
+	case 3:
+		printf("3월의 마지막 날은 31일입니다.");
+		break;
+	case 4:
+		printf("4월의 마지막 날은 30일입니다.");
+		break;
+	case 5:
+		printf("5월의 마지막 날은 31일입니다.");
+		break;
+	case 6:
+		printf("6월의 마지막 날은 30일입니다.");
+		break;
+	case 7:
+		printf("7월의 마지막 날은 31일입니다.");
+		break;
+	case 8:
+		printf("8월의 마지막 날은 31일입니다.");
+		break;
+	case 9:
+		printf("9월의 마지막 날은 30일입니다.");
+		break;
+	case 10:
+		printf("10월의 마지막 날은 31일입니다.");
+		break;
+	case 11:
+		printf("11월의 마지막 날은 30일입니다.");
+		break;
+	case 12:
+		printf("12월의 마지막 날은 31일입니다.");
+		break;
+	default :
+		printf("잘못된 입력입니다.");
+		break;
+	}
+}
