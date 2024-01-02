@@ -1,0 +1,127 @@
+if문은 특정 조건이 성립 되었을 때(true) 코드블럭을 실행하는 구문.
+if문은 중첩 가능하며 else를 사용해 조건 성립이 안되었을 때(false) 실행될 코드블럭을 저장할 수 있다.
+예시
+//1) 두 정수를 입력받고 짝수는 "두 수의 합은 짝수입니다." 홀수는 "두 수의 합은 홀수입니다." 출력(if-else 연습)
+int main() {
+	int a, b;
+	printf("두 정수를 입력하세요. : ");
+	scanf_s("%d%d", &a, &b);
+	if ((a + b) % 2 == 0)
+	{
+		printf("두 수의 합은 짝수입니다.");
+	}
+	else
+	{
+		printf("두 수의 합은 홀수입니다.");
+	}
+}
+//2) 정수값 하나를 입력받고 그 수가 1보다 크거나 같고 10보다 작거나 같으면 "정상범위의 값 입력!" 출력. 아닌 경우 "잘못된 값을 입력하셨습니다." 출력.(if-else 연습)
+int main() {
+	int num;
+	printf("정수를 입력해 주세요 : ");
+	scanf_s("%d", &num);
+	if (num >= 1 && num <= 10)
+	{
+		printf("정상범위의 값 입력!");
+	}
+	else
+	{
+		printf("잘못된 값을 입력하셨습니다.");
+	}
+}
+//3)짝수이면서 3의 배수, 홀수면서 5의 배수 출
+int main() {
+	int num;
+	printf("정수를 입력해 주세요 : ");
+	scanf_s("%d", &num);
+	if (num % 3 == 0 && num % 2 == 0)
+	{
+		printf("%d", num);
+	}
+	if (num % 5 == 0 && num % 2 == 1)
+	{
+		printf("%d", num);
+	}
+}
+//4)3의 배수이면서 4의 배수는 "num은 3의 배수이면서 4의 배수", 3의 배수가 아니면서 5의 배수가 아니라면 "num은 3의 배수도 아니면서 5의 배수도 아님!"을 출력
+int main() {
+	int num = 0;
+	printf("정수를 입력해 주세요 : ");
+	scanf_s("%d", &num);
+	if (num % 3 == 0)
+	{
+		if (num % 4 == 0)
+		{
+			printf("%d는 3의 배수이면서 4의 배수");
+		}
+	}
+	else 
+	{
+		if (num % 5 != 0)
+		{
+			printf("%d는 3의 배수도 아니면서 5의 배수도 아님!");
+		}
+	}
+}
+//5) else-if 다중분기 예
+int main() {
+	int age = 0;
+	printf("나이 입력 : ");
+	scanf_s("%d", &age);
+
+	if (age >= 20)
+	{
+		printf("성인입니다.\n");
+	}
+	else if (age >= 8)
+	{
+		printf("학생입니다.\n");
+	}
+	else
+	{
+		printf("미취학 아동입니다\n");
+	}
+}
+//6)학점 출력
+int main() {
+	int a = 0;
+	printf("성적을 입력하세요 : ");
+	scanf_s("%d", &a);
+	if (a >= 90)
+	{
+		printf("A학점");
+	}
+	else if (a >= 80)
+	{
+		printf("B학점");
+	}
+	else if ( a >= 70)
+	{
+		printf("C학점");
+	}
+	else if (a >= 60)
+	{
+		printf("D학점");
+	}
+	else
+	{
+		printf("F학점");
+	}
+}
+//7)합격, 불합격 출력
+int main() {
+	int kor = 0, eng = 0, mat = 0;
+	printf("국어, 영어, 수학 점수를 입력하세요 : ");
+	scanf_s("%d%d%d", &kor, &eng, &mat);
+	if (kor >= 40 && eng >= 40 && mat >=40)
+	{
+		if (kor + eng + mat % 3 >= 60)
+		{
+			printf("합격");
+		}
+	}
+	else
+	{
+		printf("불합격");
+	}
+}
