@@ -1,0 +1,166 @@
+continue
+C언어에서 제공하는 제어문 중 하나로 반복문에서 사용된다. continue를 만나면 현재 실행중인 반복문의 나머지 부분을 건너뛰고, 다음 반복문을 시작한다.
+
+예시)1부터 10까지의 수 중에 3의 배수는 제외하고 출력
+int main()
+{
+	int i = 1;//변수 i는 1
+	while (i <= 10)// 변수 i가 10보다 작거나 같으면 반복
+	{
+		if (i % 3 == 0)// 만약에 변수 i나누기 3이 0과 같다면
+		{
+			i++;//변수 i의 값을 1 증가시키고
+			continue;//현재 반복문을 건너뛰고 다음 반복문을 실행
+		}
+		printf("i = %d\n", i);// i = 변수의 값 으로 출력
+		i++;// 변수 i의 값 1 증가
+	}
+}
+예시)while문에서 continue랑 break문을 사용하여 1부터 100까지의 수 중에서 5의 배수만 더하고, 50을 넘어가면 반복문을 중단
+int main() {
+    int sum = 0;
+    int i = 1;
+
+    while (i <= 100) {
+        if (i % 5 != 0) // 5의 배수가 아니면 다음 반복으로 넘어간다.
+        { 
+            i++;
+            continue;
+        }
+        sum += i;
+        printf("%d\n", i);
+        if (sum > 50) // 합이 50을 넘어가면 반복문을 종료한다.
+        {
+            break;
+        }
+        i++;
+    }
+    printf("합계: %d\n", sum);
+}
+for 문
+for 문은 C언어에서 제공하는 반복문 중 하나로, 반복 횟수를 미리 정햊놓고 반복을 수행하는 구조
+
+for문은 다음과 같이 동작한다.
+
+1. 초기식을 먼저 실행한다. 이때 초기식에서 선언된 변수는 for문의 블럭에서 사용될 수 있다.
+2. 조건식을 평가한다. 조건식이 참이면 반복문의 블럭을 실행한다. 조건식이 거짓이면 반복문을 종료한다.
+3. 반복문의 블럭을 실행한다.
+4. 증감식을 실행한다.
+5. 2번째 순서로 돌아가 조건식을 평가한다. 조건식이 참이면 반복문의 블럭을 실행한다. 조건식이 거짓이면 반복문을 종료한다.
+예시)
+int main()
+{
+	int i = 0;// 초기값
+	while (i <= 10)// 조건식
+	{
+		printf("i = %d\n", i);
+		i++;// 증감연산
+	}
+	printf("\n");
+	for (int i = 0; i <= 10; i++)// 초기값; 조건식; 증감연산; -> while 문과 구조는 똑같음
+	{
+		printf("i = %d\n", i);
+	}
+}
+예시)
+int main()
+{
+	int sum = 0;
+	for (int i = 1; i <= 10; i++)
+	{
+		sum += i;
+	}
+	printf("1부터 10까지의 합 : %d\n", sum);
+}
+
+문제 1) 1부터 N까지의 합을 출력하기(N의 수는 scan_f 사용, for문으로만 만들기)
+int main()
+{
+int a;
+int sum = 0;
+printf("정수를 입력하세요 >> ");
+scanf_s("%d", &a);
+
+for (int i = 1; i <= a; i++)
+{
+	sum += i;
+}
+printf("1부터 %d까지의 합 : %d\\n", a, sum);
+
+printf("1부터 %d까지의 합 : %d\\n", a, sum);
+문제 2) N의 값을 받아서 N의 구구단 출력(for문으로만 만들기)
+int main()
+{
+	int a;
+	printf("구구단수를 입력하세요 >>> ");
+	scanf_s("%d", &a);
+
+	for (int i = 1; i < 10; i++)
+	{
+		printf("%d * %d = %d\n", a, i, a * i);
+	}
+}
+문제 3) 구구단 2단부터 9단까지 출력하기(for문으로만)
+int main()
+{
+for (int i = 2; i <= 9; i++) { // 2단부터 9단까지 반복
+    printf("%d단\\n", i);
+
+    for (int j = 1; j <= 9; j++) {        // 각 단의 1부터 9까지의 곱을 출력
+        printf("%d x %d = %d\\n", i, j, i * j);
+    }
+    printf("\\n"); // 단 사이에 공백 추가
+}
+
+문제 4) 별찍기(for문으로만)
+int main()
+{
+	int height;// 높이 변수
+	printf("높이를 입력하세요 >> ");
+	scanf_s("%d", &height);//변수 값 입력
+	printf("높이 : %d\n", height);
+	for (int i = 1; i <= height; i++)
+	{
+		for (int j = 1; j <= i; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+문제 5) 높이를 입력받아 높이만큼의 역삼각형 출력
+int main()
+{
+	int height;
+	printf("높이를 입력하세요 >> ");
+	scanf_s("%d", &height);
+	printf("높이 : %d\n", height);
+	for (int i = 0; i < height; i++)
+	{
+		for (int j = height - 1; j >= i; j--)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+문제 6) 높이를 입력받아 정삼각형 출력
+int main() {
+    int height;
+    printf("삼각형의 높이를 입력하세요: ");   
+    scanf_s("%d", &height);// 높이 입력 받기
+
+    for (int row = 0; row < height; row++)//열 선언, 조건, 증감
+    {
+        for (int space = height - row; space > 0; space--)//공백 선언, 조건, 증감
+        {
+            printf(" ");
+        }
+        for (int star = 2 * row + 1; star > 0; star--)//별 선언, 조건, 증감
+        {
+            printf("*");
+        }
+        printf("\n");//공백
+    }
+}
+
