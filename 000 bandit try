@@ -1,0 +1,13 @@
+bandit 0
+접속
+ssh bandit0@bandit.labs.overthewire.org -p 2220 
+pw -> bandit 0
+
+bandit 1
+ls -> readme -> cat readme 
+-> NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+
+bandit 2
+ls -> - -> unix 계열에서 -는 옵션을 사용할때 이용되기 때문에 cat -가 먹히지 않는다.
+-> 그러므로 파일의 전체 경로를 명시해서 적어야 함 -> -는 홈 디렉토리에 있는 파일이므로 ./-이다. -> cat ./-를 칠 경우 pw가 나온다.
+rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
